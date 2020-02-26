@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      $.get("https://ipinfo.io", function(response) {
+          console.log(response.city, response.country);
+      }, "jsonp");
+    });
+  </script>
+</head>
+<body>
+  <div id="infoposition"></div>
+  <form id="SubscriptionForm" method="POST" action="subscription">
+    
+    <input type="submit" value="Valider">
+  </form>
+
+</body>
+</html>
+
+

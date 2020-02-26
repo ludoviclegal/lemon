@@ -1,0 +1,10 @@
+# config/routes.yaml
+
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# Formulaire d'inscription
+app_register:
+    path: /customer/register
+    controller: App\Controller\Customer::register
