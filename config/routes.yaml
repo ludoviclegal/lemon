@@ -8,3 +8,8 @@
 app_register:
     path: /customer/register
     controller: App\Controller\Customer::register
+
+# Formulaire d'inscription
+app_register_confirm:
+    path: /customer/registerConfirm
+    controller: App\Controller\Customer::registerConfirm

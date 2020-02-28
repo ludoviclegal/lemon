@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class CustomerRegistrationFormType extends AbstractType
 {
@@ -19,9 +20,9 @@ class CustomerRegistrationFormType extends AbstractType
             ->add('lastname', TextType::class, ['label' => 'Nom'])
             ->add('birth_date', DateType::class, ['label' => 'Date de naissance'])
             ->add('mail', TextType::class, ['label' => 'Mail'])
-            ->add('password', TextType::class, ['label' => 'Mot de passe'])
+            ->add('password', PasswordType::class, ['label' => 'Mot de passe'])
             ->add('job', TextType::class, ['label' => 'Emploi'])
-            ->add('country', null, ['label' => 'Pays'])
+            ->add('country', null, ['label' => 'Pays', 'data' => $options['country']])
             ->add('sexe', null, ['label' => 'Genre'])
         ;
     }
@@ -30,6 +31,7 @@ class CustomerRegistrationFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Customer::class,
+            'country' => null,
         ]);
     }
 }
